@@ -21,6 +21,7 @@ steps:
     mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
     mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
+    time zone: 'Etc/UTC' # Optional, default value is "Etc/UTC". time zone of the MySQL server
 ```
 
 If want bind MySQL host port to 3306, please see [The Default MySQL](#the-default-mysql).

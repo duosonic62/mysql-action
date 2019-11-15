@@ -26,6 +26,12 @@ if [ -n "$INPUT_MYSQL_DATABASE" ]; then
   docker_run="$docker_run -e MYSQL_DATABASE=$INPUT_MYSQL_DATABASE"
 fi
 
+if [ -n "$TIME_ZONE" ]; then
+  echo "Use specified time zone"
+
+  docker_run="$docker_run -e TZ=$TIME_ZONE"
+fi
+
 docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT mysql:$INPUT_MYSQL_VERSION --port=$INPUT_CONTAINER_PORT"
 docker_run="$docker_run --character-set-server=$INPUT_CHARACTER_SET_SERVER --collation-server=$INPUT_COLLATION_SERVER"
 
