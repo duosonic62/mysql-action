@@ -41,6 +41,10 @@ inputs:
     description: 'MYSQL_PASSWORD - specified superuser password which user is power for created database'
     required: false
     default: ''
+  time zone:
+    description: 'TZ - time zone'
+    required: false
+    default: 'Etc/UTC'
 runs:
   using: 'docker'
   image: 'Dockerfile'
